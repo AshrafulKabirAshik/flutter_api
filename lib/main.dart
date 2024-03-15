@@ -108,7 +108,9 @@ class _MyHomePageState extends State<MyHomePage> {
             } else if (snapshot.hasError) {
               return const Text('Error');
             }
-            return const CircularProgressIndicator();
+            return const CircularProgressIndicator(
+              color: Colors.yellow,
+            );
           },
         ),
       ),

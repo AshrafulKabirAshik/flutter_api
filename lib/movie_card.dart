@@ -24,6 +24,10 @@ class MovieCard extends StatelessWidget {
         Card(
           elevation: 8.0,
           shape: const RoundedRectangleBorder(
+              side: BorderSide(
+                color: Colors.white30,
+                width: 1,
+              ),
               borderRadius: BorderRadius.all(Radius.circular(10.0))),
           clipBehavior: Clip.antiAlias,
           margin: const EdgeInsets.all(0.0),
@@ -54,7 +58,7 @@ class MovieCard extends StatelessWidget {
           child: Text(
             maxLines: 1,
             overflow: TextOverflow.ellipsis,
-            reliesDate.substring(0,4),
+            reliesDate.substring(0, 4),
             style: GoogleFonts.alata(
               textStyle: const TextStyle(
                 fontWeight: FontWeight.bold,
