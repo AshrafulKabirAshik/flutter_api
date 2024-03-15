@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/widgets.dart';
 
 class MovieCard extends StatelessWidget {
   final String imgUrl;
@@ -31,8 +29,8 @@ class MovieCard extends StatelessWidget {
           ),
         ),
         ListTile(
-          title: Text('$title',maxLines: 2,overflow: TextOverflow.ellipsis,),
-          subtitle: Text('$reliesDate'),
+          title: Text(title,maxLines: 2,overflow: TextOverflow.ellipsis,),
+          subtitle: Text(reliesDate),
           //trailing: Text('$rating'),
         ),
       ],
