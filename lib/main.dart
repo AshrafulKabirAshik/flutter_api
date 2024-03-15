@@ -3,6 +3,7 @@ import 'package:flutter_api/Results.dart';
 import 'package:flutter_api/apiService.dart';
 import 'package:flutter_api/details.dart';
 import 'package:flutter_api/movie_card.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 void main() {
   runApp(const MyApp());
@@ -61,7 +62,16 @@ class _MyHomePageState extends State<MyHomePage> {
         backgroundColor: Colors.white,
         surfaceTintColor: Colors.white,
         centerTitle: true,
-        title: Text(widget.title),
+        title: Text(
+          widget.title,
+          style: GoogleFonts.shadowsIntoLight(
+            textStyle: const TextStyle(
+              fontWeight: FontWeight.bold,
+              fontSize: 32,
+              color: Colors.purple,
+            ),
+          ),
+        ),
       ),
       body: Center(
         child: FutureBuilder<List<Results>>(
@@ -72,7 +82,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 padding: const EdgeInsets.all(8),
                 gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
                   maxCrossAxisExtent: 300,
-                  mainAxisExtent: 400,
+                  mainAxisExtent: 350,
                   childAspectRatio: 3 / 2,
                   crossAxisSpacing: 8,
                   mainAxisSpacing: 8,

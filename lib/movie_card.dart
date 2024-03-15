@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class MovieCard extends StatelessWidget {
   final String imgUrl;
@@ -6,7 +7,12 @@ class MovieCard extends StatelessWidget {
   final String reliesDate;
   final String rating;
 
-  const MovieCard({super.key, required this.imgUrl, required this.title, required this.reliesDate, required this.rating});
+  const MovieCard(
+      {super.key,
+      required this.imgUrl,
+      required this.title,
+      required this.reliesDate,
+      required this.rating});
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +22,7 @@ class MovieCard extends StatelessWidget {
       //mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: <Widget>[
         Card(
-          elevation: 18.0,
+          elevation: 8.0,
           shape: const RoundedRectangleBorder(
               borderRadius: BorderRadius.all(Radius.circular(10.0))),
           clipBehavior: Clip.antiAlias,
@@ -24,15 +30,43 @@ class MovieCard extends StatelessWidget {
           child: Image.network(
             'https://image.tmdb.org/t/p/w500$imgUrl}',
             fit: BoxFit.cover,
-            height: 300.0,
+            height: 260.0,
             width: 130.0,
           ),
         ),
-        ListTile(
+        Padding(
+          padding: const EdgeInsets.fromLTRB(4, 8, 4, 0),
+          child: Text(
+            title,
+            maxLines: 2,
+            overflow: TextOverflow.ellipsis,
+            style: GoogleFonts.openSans(
+              textStyle: const TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 14,
+                color: Colors.black,
+              ),
+            ),
+          ),
+        ),
+        Padding(
+          padding: const EdgeInsets.fromLTRB(4, 2, 4, 0),
+          child: Text(
+            reliesDate.substring(0,4),
+            style: GoogleFonts.alata(
+              textStyle: const TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 14,
+                color: Colors.grey,
+              ),
+            ),
+          ),
+        ),
+        /*ListTile(
           title: Text(title,maxLines: 2,overflow: TextOverflow.ellipsis,),
           subtitle: Text(reliesDate),
           //trailing: Text('$rating'),
-        ),
+        ),*/
       ],
     );
   }
