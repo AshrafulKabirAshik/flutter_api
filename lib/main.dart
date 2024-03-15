@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_api/Results.dart';
 import 'package:flutter_api/apiService.dart';
 import 'package:flutter_api/details.dart';
+import 'package:flutter_api/movie_card.dart';
 
 void main() {
   runApp(const MyApp());
@@ -68,13 +69,13 @@ class _MyHomePageState extends State<MyHomePage> {
           builder: (context, snapshot) {
             if (snapshot.hasData) {
               return GridView.builder(
-                padding: EdgeInsets.all(2),
+                padding: EdgeInsets.all(8),
                 gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
-                  maxCrossAxisExtent: 320,
-                  mainAxisExtent: 267,
+                  maxCrossAxisExtent: 300,
+                  mainAxisExtent: 400,
                   childAspectRatio: 3 / 2,
-                  crossAxisSpacing: 2,
-                  mainAxisSpacing: 0,
+                  crossAxisSpacing: 8,
+                  mainAxisSpacing: 8,
                 ),
                 itemCount: snapshot.data!.length,
                 itemBuilder: (context, index) {
@@ -83,14 +84,11 @@ class _MyHomePageState extends State<MyHomePage> {
                     onTap: () {
                       openPage(results);
                     },
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.circular(8),
-                      child: Image.network(
-                        fit: BoxFit.fitWidth,
-                        height: 400,
-                        'https://image.tmdb.org/t/p/w500'
-                        '${results.posterPath}',
-                      ),
+                    child: MovieCard(
+                      imgUrl: '${results.posterPath}',
+                      title: '${results.title}',
+                      reliesDate: '${results.releaseDate}',
+                      rating: '${results.voteAverage}',
                     ),
                   );
                 },
@@ -105,16 +103,3 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 }
-
-/*ListTile(
-leading: Image.network(
-'https://image.tmdb.org/t/p/w500' '${results.posterPath}',
-),
-title: Text('${results.title} '),
-subtitle: Text('${results.releaseDate} '),
-onTap: () => openPage(results),
-trailing: const Icon(
-Icons.navigate_next,
-color: Colors.grey,
-),
-)*/
