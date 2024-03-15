@@ -16,6 +16,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
@@ -58,9 +59,10 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.grey.shade900,
       appBar: AppBar(
-        backgroundColor: Colors.white,
-        surfaceTintColor: Colors.white,
+        backgroundColor: Colors.grey.shade900,
+        surfaceTintColor: Colors.grey.shade900,
         centerTitle: true,
         title: Text(
           widget.title,
@@ -68,7 +70,7 @@ class _MyHomePageState extends State<MyHomePage> {
             textStyle: const TextStyle(
               fontWeight: FontWeight.bold,
               fontSize: 32,
-              color: Colors.purple,
+              color: Colors.white,
             ),
           ),
         ),

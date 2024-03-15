@@ -40,11 +40,11 @@ class MovieCard extends StatelessWidget {
             title,
             maxLines: 2,
             overflow: TextOverflow.ellipsis,
-            style: GoogleFonts.openSans(
+            style: GoogleFonts.cormorant(
               textStyle: const TextStyle(
                 fontWeight: FontWeight.bold,
-                fontSize: 14,
-                color: Colors.black,
+                fontSize: 18,
+                color: Colors.white,
               ),
             ),
           ),
@@ -52,12 +52,14 @@ class MovieCard extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.fromLTRB(4, 2, 4, 0),
           child: Text(
+            maxLines: 1,
+            overflow: TextOverflow.ellipsis,
             reliesDate.substring(0,4),
             style: GoogleFonts.alata(
               textStyle: const TextStyle(
                 fontWeight: FontWeight.bold,
                 fontSize: 14,
-                color: Colors.grey,
+                color: Colors.yellow,
               ),
             ),
           ),

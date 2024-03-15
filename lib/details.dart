@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_api/Results.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class Details extends StatefulWidget {
-
   final Results results;
 
   const Details({super.key, required this.results});
@@ -15,27 +15,157 @@ class _DetailsState extends State<Details> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.grey.shade900,
       body: SingleChildScrollView(
-        child: Column(
-          children: [
-            Image.network(
-              'https://image.tmdb.org/t/p/w500' '${widget.results.posterPath}',
-            ),
-            Text('${widget.results.adult}'),
-            Text('${widget.results.backdropPath}'),
-            Text('${widget.results.genreIds}'),
-            Text('${widget.results.id}'),
-            Text('${widget.results.originalLanguage}'),
-            Text('${widget.results.originalTitle}'),
-            Text('${widget.results.overview}'),
-            Text('${widget.results.popularity}'),
-            Text('${widget.results.posterPath}'),
-            Text('${widget.results.releaseDate}'),
-            Text('${widget.results.title}'),
-            Text('${widget.results.video}'),
-            Text('${widget.results.voteAverage}'),
-            Text('${widget.results.voteCount}'),
-          ],
+        child: SafeArea(
+          child: Column(
+            children: [
+              Image.network(
+                'https://image.tmdb.org/t/p/w500'
+                '${widget.results.posterPath}',
+              ),
+              Text(
+                '${widget.results.adult}',
+                style: GoogleFonts.cormorant(
+                  textStyle: const TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 18,
+                    color: Colors.white,
+                  ),
+                ),
+              ),
+              Text(
+                '${widget.results.backdropPath}',
+                style: GoogleFonts.cormorant(
+                  textStyle: const TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 18,
+                    color: Colors.white,
+                  ),
+                ),
+              ),
+              Text(
+                '${widget.results.genreIds}',
+                style: GoogleFonts.cormorant(
+                  textStyle: const TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 18,
+                    color: Colors.white,
+                  ),
+                ),
+              ),
+              Text(
+                '${widget.results.id}',
+                style: GoogleFonts.cormorant(
+                  textStyle: const TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 18,
+                    color: Colors.white,
+                  ),
+                ),
+              ),
+              Text(
+                '${widget.results.originalLanguage}',
+                style: GoogleFonts.cormorant(
+                  textStyle: const TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 18,
+                    color: Colors.white,
+                  ),
+                ),
+              ),
+              Text(
+                '${widget.results.originalTitle}',
+                style: GoogleFonts.cormorant(
+                  textStyle: const TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 18,
+                    color: Colors.white,
+                  ),
+                ),
+              ),
+              Text(
+                '${widget.results.overview}',
+                style: GoogleFonts.cormorant(
+                  textStyle: const TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 18,
+                    color: Colors.white,
+                  ),
+                ),
+              ),
+              Text(
+                '${widget.results.popularity}',
+                style: GoogleFonts.cormorant(
+                  textStyle: const TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 18,
+                    color: Colors.white,
+                  ),
+                ),
+              ),
+              Text(
+                '${widget.results.posterPath}',
+                style: GoogleFonts.cormorant(
+                  textStyle: const TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 18,
+                    color: Colors.white,
+                  ),
+                ),
+              ),
+              Text(
+                '${widget.results.releaseDate}',
+                style: GoogleFonts.cormorant(
+                  textStyle: const TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 18,
+                    color: Colors.white,
+                  ),
+                ),
+              ),
+              Text(
+                '${widget.results.title}',
+                style: GoogleFonts.cormorant(
+                  textStyle: const TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 18,
+                    color: Colors.white,
+                  ),
+                ),
+              ),
+              Text(
+                '${widget.results.video}',
+                style: GoogleFonts.cormorant(
+                  textStyle: const TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 18,
+                    color: Colors.white,
+                  ),
+                ),
+              ),
+              Text(
+                '${widget.results.voteAverage}',
+                style: GoogleFonts.cormorant(
+                  textStyle: const TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 18,
+                    color: Colors.white,
+                  ),
+                ),
+              ),
+              Text(
+                '${widget.results.voteCount}',
+                style: GoogleFonts.cormorant(
+                  textStyle: const TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 18,
+                    color: Colors.white,
+                  ),
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );
