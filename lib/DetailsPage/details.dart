@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_api/Results.dart';
+
 import 'package:google_fonts/google_fonts.dart';
+
+import '../movieTMDB/Results.dart';
 
 class Details extends StatefulWidget {
   final Results results;
